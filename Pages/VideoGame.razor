@@ -1,0 +1,32 @@
+﻿@page "/videogame"
+@page "/videogame/{id:int} "
+@inject IGameService GameService
+
+if(id == null)
+{
+    <h3>Create new video game</h3>
+}
+else
+{
+    <h3>Edit @game.Name</h3>
+}
+
+<h3>VideoGame</h3>
+
+@code {
+
+    [Parameter]
+    public int? Id { get; set;}
+
+    Game game = new Game();
+
+    protected override async Task OnParametersSetAsync()
+    {
+
+        if (Id != null)
+        {
+            game = await GameService.GetSingleGame((int)Id);
+        }
+
+    }
+}
