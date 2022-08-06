@@ -10,6 +10,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("videogamedb"));
+builder.Services.AddScoped<IGameService, GameService>();
 
 var app = builder.Build();
 
