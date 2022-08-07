@@ -1,5 +1,7 @@
 ﻿@page "/videogame"
 @page "/videogame/{id:int}"
+@using Microsoft.Extensions.Logging
+@inject ILogger<VideoGame> Logger
 @inject IGameService GameService
 
  @if(Id == null)
@@ -10,18 +12,20 @@ else
 {
     <h3>Edit "@game.Name"</h3>
 }
-<EditForm Model="game" OnSubmit="HandleSubmit">
+<EditForm Model="@game" OnSubmit="@HandleSubmit">
     <div>
+        <DataAnnotationsValidator />
+        <ValidationSummary />
         <label for="name">Name</label>
-        <InputText id="name" @bind-Value="game.Name" class="form-control"></InputText>
+        <InputText id="name" @bind-Value="game.Name" class="form-control" tabindex="1"></InputText>
     </div>
     <div>
         <label for="developer">Developer</label>
-        <InputText id="developer" @bind-Value="game.Developer" class="form-control"></InputText>
+        <InputText id="developer" @bind-Value="game.Developer" class="form-control" tabindex="2"></InputText>
     </div>
     <div>
         <label for="release">Relaese</label>
-        <InputDate id="release" @bind-Value="game.Release" class="form-control"></InputDate>
+        <InputDate id="release" @bind-Value="game.Release" class="form-control" tabindex="3"></InputDate>
     </div>
 
     <br />
@@ -62,7 +66,7 @@ else
 
     async Task HandleSubmit()
     {
-
+        
         if(Id == null)
         {
             await GameService.CreateGame(game);
@@ -71,7 +75,7 @@ else
         {
             await GameService.UpdateGame(game, (int)Id);
         }
-
+        
     }
 
     async Task DeleteGame()
