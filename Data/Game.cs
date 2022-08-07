@@ -6,9 +6,11 @@ namespace BlazorServerCrud.Data
     {
         public int Id { get; set; }
 
-        public string? Name { get; set; } 
+        [Required(ErrorMessage = "Enter a Name")]
+        public string? Name { get; set; }
 
-        public string Developer { get; set; } = string.Empty ;
+        [Required(ErrorMessage = "Enter a Developer")]
+        public string? Developer { get; set; }
 
         public DateTime? Release { get; set; }
     }

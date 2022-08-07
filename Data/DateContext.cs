@@ -22,9 +22,9 @@ namespace BlazorServerCrud.Data
                 new Game
                 {
                     Id = 2,
-                    Name = "Rainbow Six Seadge",
-                    Developer = "Ubisoft",
-                    Release = new DateTime(2015, 12, 1)
+                    Name = "The Witcher 3 Wild Hunt",
+                    Developer = "CD Projekt RED",
+                    Release = new DateTime(2015, 5, 18)
                 }
                 );
         }

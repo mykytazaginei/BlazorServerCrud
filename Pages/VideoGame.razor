@@ -1,7 +1,6 @@
 ﻿@page "/videogame"
 @page "/videogame/{id:int}"
-@using Microsoft.Extensions.Logging
-@inject ILogger<VideoGame> Logger
+@using System.ComponentModel.DataAnnotations
 @inject IGameService GameService
 
  @if(Id == null)
@@ -13,9 +12,9 @@ else
     <h3>Edit "@game.Name"</h3>
 }
 <EditForm Model="@game" OnSubmit="@HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
     <div>
-        <DataAnnotationsValidator />
-        <ValidationSummary />
         <label for="name">Name</label>
         <InputText id="name" @bind-Value="game.Name" class="form-control" tabindex="1"></InputText>
     </div>
@@ -41,7 +40,7 @@ else
 
 
 @code {
-
+   
     [Parameter]
     public int? Id { get; set;}
 
@@ -66,6 +65,7 @@ else
 
     async Task HandleSubmit()
     {
+       
         
         if(Id == null)
         {
