@@ -16,7 +16,7 @@ namespace BlazorServerCrud.Data
                 { 
                     Id = 1, Name = "Elden Ring",
                     Developer = "From Software", 
-                    Realese = new DateTime(2022, 2, 23) 
+                    Release = new DateTime(2022, 2, 23) 
                 },
 
                 new Game
@@ -24,7 +24,7 @@ namespace BlazorServerCrud.Data
                     Id = 2,
                     Name = "Rainbow Six Seadge",
                     Developer = "Ubisoft",
-                    Realese = new DateTime(2015, 12, 1)
+                    Release = new DateTime(2015, 12, 1)
                 }
                 );
         }

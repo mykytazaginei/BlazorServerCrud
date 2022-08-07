@@ -10,7 +10,7 @@
             <th>Game</th>
             <th>Developer</th>
             <th>Release</th>
-            <th>Edit</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,7 +19,7 @@
             <tr>
                 <td>@game.Name</td>
                 <td>@game.Developer</td>
-                <td>@game.Realese?.ToShortDateString()</td>
+                <td>@game.Release?.ToShortDateString()</td>
                 <td>
                     <button class="btn btn-primary" @onclick="(() => ShowGame(game.Id))">
                         <i class="oi oi-pencil"> </i>
@@ -30,6 +30,8 @@
         }
     </tbody>
 </table>
+<br />
+
 <button class="btn btn-primary" @onclick="CreateNewGame">Create New Game</button>
 
 @code {

@@ -69,10 +69,10 @@ namespace BlazorServerCrud.Data
             
             if(dbGame == null)
                 throw new Exception("No game here.");
-
+           
             dbGame.Name = game.Name;
             dbGame.Developer = game.Developer;
-            dbGame.Realese = game.Realese;
+            dbGame.Release = game.Release;
 
             await _context.SaveChangesAsync();
             _navigationManager.NavigateTo("videogames");    

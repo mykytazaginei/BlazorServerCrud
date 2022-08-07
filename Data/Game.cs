@@ -8,6 +8,6 @@
 
         public string Developer { get; set; } = string.Empty ;
 
-        public DateTime? Realese { get; set; }
+        public DateTime? Release { get; set; }
     }
 }
