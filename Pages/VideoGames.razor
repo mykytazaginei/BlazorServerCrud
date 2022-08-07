@@ -7,9 +7,9 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Game</th>
-            <th>Developer</th>
-            <th>Release</th>
+            <th>Games</th>
+            <th>Developers</th>
+            <th>Date Of Release</th>
             <th></th>
         </tr>
     </thead>
@@ -21,7 +21,7 @@
                 <td>@game.Developer</td>
                 <td>@game.Release?.ToShortDateString()</td>
                 <td>
-                    <button class="btn btn-primary" @onclick="(() => ShowGame(game.Id))">
+                    <button class="btn btn-warning" @onclick="(() => ShowGame(game.Id))">
                         <i class="oi oi-pencil"> </i>
                     </button>
                 </td>
